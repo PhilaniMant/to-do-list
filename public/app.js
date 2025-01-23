@@ -19,15 +19,6 @@ document.addEventListener('DOMContentLoaded', function() {
             tasks.push({ title: taskTitle, description: taskDescription });
             localStorage.setItem('tasks', JSON.stringify(tasks));
 
-            if (taskId) {
-                // Edit existing task
-                tasks = tasks.map(task => task.id === taskId ? { id: taskId, title: taskTitle, description: taskDescription } : task);
-            } else {
-                // Add new task
-                const newTask = { id: Date.now().toString(), title: taskTitle, description: taskDescription };
-                tasks.push(newTask);
-            }
-
             // Redirect to home page
             window.location.href = '/home.html';
         });
@@ -47,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
             document.getElementById('task-list').appendChild(li);
         });
     }
-    
+
     window.deleteTask = function (button) {
         const task = button.parentElement;
         const taskTitle = task.querySelector('h3').innerText;

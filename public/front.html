@@ -34,17 +34,6 @@
             </div>
         </form>
     </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const editTask = JSON.parse(localStorage.getItem('editTask'));
-            if (editTask) {
-                document.getElementById('task-id').value = editTask.id;
-                document.getElementById('input-box').value = editTask.title;
-                document.getElementById('description').value = editTask.description;
-                localStorage.removeItem('editTask');
-            }
-        });
-    </script>
     <script src="app.js"></script>
 </body>
 </html>

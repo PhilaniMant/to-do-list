@@ -156,7 +156,8 @@ textarea{
 }
 
 button{
-
+    margin-top: 9px;
+width: 15%;
 }
 
 .add-to-container form{
@@ -199,7 +200,10 @@ button{
     max-width: 600px;
     margin: 0 auto;
     padding: 20px;
-    background-color: #4e2828;
+    background-color: #000000;
+    width:90%;
+    height:30%;
+    border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -224,7 +228,7 @@ button{
 }
 
 .task-item button {
-    background-color: #3a1216;
+    background-color: #555353;
     color: #fff;
     border: none;
     padding: 5px 10px;
