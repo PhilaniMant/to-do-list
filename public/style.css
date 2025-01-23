@@ -235,3 +235,15 @@ button{
 .task-item button:hover {
     background-color: #c82333;
 }
+
+.task-item.completed h3,
+.task-item.completed p {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-item.completed::before {
+    content: '✔';
+    color: green;
+    margin-right: 10px;
+}

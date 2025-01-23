@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
             // Get input values
             const taskTitle = document.getElementById('input-box').value;
             const taskDescription = document.getElementById('description').value;
+             const taskId = document.getElementById('task-id').value;
 
             if (taskTitle === '' || taskDescription === '') {
                 alert('Please provide both title and description');
@@ -17,6 +18,15 @@ document.addEventListener('DOMContentLoaded', function() {
             const tasks = JSON.parse(localStorage.getItem('tasks')) || [];
             tasks.push({ title: taskTitle, description: taskDescription });
             localStorage.setItem('tasks', JSON.stringify(tasks));
+
+            if (taskId) {
+                // Edit existing task
+                tasks = tasks.map(task => task.id === taskId ? { id: taskId, title: taskTitle, description: taskDescription } : task);
+            } else {
+                // Add new task
+                const newTask = { id: Date.now().toString(), title: taskTitle, description: taskDescription };
+                tasks.push(newTask);
+            }
 
             // Redirect to home page
             window.location.href = '/home.html';
@@ -32,21 +42,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 <h3>${task.title}</h3>
                 <p>${task.description}</p>
                 <button onclick="deleteTask(this)">Delete</button>
+                <button onclick="completeTask('${task.id}', this)">Completed</button>
             `;
             document.getElementById('task-list').appendChild(li);
         });
     }
-
-    function deleteTask(button) {
+    
+    window.deleteTask = function (button) {
         const task = button.parentElement;
-        task.remove(); // Remove the task from the list
-        removeTask(task.querySelector('h3').innerText);
+        const taskTitle = task.querySelector('h3').innerText;
+
+        // Remove the task from the DOM
+        task.remove();
+
+        // Remove the task from local storage
+        let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+        tasks = tasks.filter(t => t.title !== taskTitle);
+        localStorage.setItem('tasks', JSON.stringify(tasks));
     }
 
-    function removeTask(title) {
+    window.completeTask = function(taskId, button) {
         let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
-        tasks = tasks.filter(task => task.title !== title);
+        tasks = tasks.map(task => task.id === taskId ? { ...task, completed: true } : task);
         localStorage.setItem('tasks', JSON.stringify(tasks));
+
+        // Mark the task as completed in the DOM
+        const task = button.parentElement;
+        task.classList.add('completed');
+    
     }
 
     // Load tasks when the page loads
