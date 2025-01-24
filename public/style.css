@@ -9,6 +9,10 @@ body{
     background-color: #444;
     color:#fff;
     font-size: 16px;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 header{
@@ -55,6 +59,7 @@ header nav ul li a:hover{
 .showcase{
     text-align:center;
     margin-top:10%;
+    
 }
 
 .showcase h1{
@@ -102,32 +107,26 @@ header nav ul li a:hover{
     align-items: right;
 }
 
-.add button{
+.add a{
     display:inline-block;
     text-decoration: none;
-    padding:10px 30px;
-    background-color: #1cff91;
+    padding:10px 20px;
+    background-color: #77857e;
+    border-radius: 10px;
+    border-color: #222;
     font-weight: bold;
     color:#333;
     transition:0.3s;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
 }
 
-.add button:hover{
+.add a:hover{
     background-color: #111;
     color:#fff;
 }
 
 .add p{
-   
+    padding-top:10px;
     font-weight: bold;
-}
-
-button a{
-    color: #000000;
-    text-align: right;
 }
 
 .add-to-container{
@@ -153,11 +152,6 @@ margin-bottom: 15px;
 textarea{
     width: 100%;
     padding :10px;
-}
-
-button{
-    margin-top: 9px;
-width: 15%;
 }
 
 .add-to-container form{
@@ -194,6 +188,13 @@ width: 15%;
 .add-to-container form > input[type="submit"]:hover{
     background-color: #fff;
     padding:10px 36px;
+}
+
+.add-to-container button{
+    display: inline-block;
+        margin-top: 9px;
+    width: 15%;
+
 }
 
 .task-list-container {
@@ -248,6 +249,23 @@ width: 15%;
 
 .task-item.completed::before {
     content: '✔';
-    color: green;
+    color: rgb(255, 255, 255);
     margin-right: 10px;
+}
+
+.delete{
+    padding:12px 30px;
+    background-color: rgb(247, 58, 58);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color:#fff;
+    margin-left:10px;
+    transition:0.3s;
+    border:none;
+    font-size: 18px;
+}
+
+.delete:hover{
+    background-color:  rgb(255, 92, 92);
 }
