@@ -1,29 +1,34 @@
-#To-Do List Application
+# To-Do List Application
 
-##Overview
+## Table of Contents
+- [Project Overview](#project-overview)
+- [Features](#features)
+- [Technologies Used](#technologies-used)
+
+## Overview
 
 This is a web-based To-Do List Application that allows users to manage their tasks efficiently. The app is hosted and live at To-Do List App.
 
-##Features
+## Features
 
-Add Tasks: Users can add tasks to their to-do list.
+-**Add Tasks**: Users can add tasks to their to-do list.
 
-Delete Tasks: Remove tasks that are no longer needed.
+-**Delete Tasks**: Remove tasks that are no longer needed.
 
-Mark as Complete: Track progress by marking tasks as complete.
+-**Mark as Complete**: Track progress by marking tasks as complete.
 
-User-Friendly Interface: Simple and intuitive design for ease of use.
+-**User-Friendly Interface**: Simple and intuitive design for ease of use.
 
-##Technologies Used
+## Technologies Used
 
-Frontend: HTML, CSS, JavaScript
+-**Frontend**: HTML, CSS, JavaScript
 
-Backend: Node.js, Express.js
+-**Backend**: Node.js, Express.js
 
-Database: MongoDB
+-**Database**: MongoDB
 
-Hosting: Render.com'
+-**Hosting**: Render.com'
 
-##Deployment Link
+## Deployment Link
 
 https://to-do-list-ualo.onrender.com/
